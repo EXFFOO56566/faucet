@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "607037435944",
+    "project_id": "tochy-bitcion-wallet",
+    "storage_bucket": "tochy-bitcion-wallet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607037435944:android:26049c39fe31b4b332851d",
+        "android_client_info": {
+          "package_name": "com.tochy.btc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607037435944-fk44a15clpp56sht077mf1hs45iao1o7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tochy.btc",
+            "certificate_hash": "3c29d14240958c4f80fb79a7ded81547fb744100"
+          }
+        },
+        {
+          "client_id": "607037435944-4d3iaq8bhn22h76m46l3dhpt18of0th6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0bnayh5qKcf-C9rR1ZLE95J4d9fgvbiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607037435944-4d3iaq8bhn22h76m46l3dhpt18of0th6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

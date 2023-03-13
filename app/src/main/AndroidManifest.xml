@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tochy.btc">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application
+        android:name="com.tochy.btc.Btc"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_id"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <receiver
+            android:name="com.tochy.btc.ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.tochy.btc.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tochy.btc.AuthActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.tochy.btc.MyFirebaseMessaging"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.tochy.btc.MyFirebaseInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.tochy.btc.LeaderBoardActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.InviteActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity">
+            <intent-filter>
+                <action android:name="com.actsgi.btc.REFER_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tochy.btc.BalanceActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.NotificationActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.TransactionActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.PayoutActivity">
+            <intent-filter>
+                <action android:name="com.actsgi.btc.PAYOUT_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tochy.btc.PayoutActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.TsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.MainActivity"/>
+        <activity
+            android:name="com.tochy.btc.PrivacyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tochy.btc.FaqActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.tochy.btc.TsActivity"/>
+
+
+        <receiver android:name="com.tochy.btc.TimeReceiver"/>
+    </application>
+
+</manifest>
